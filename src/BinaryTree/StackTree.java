@@ -60,6 +60,7 @@ public class StackTree {
             }
         }
 
+
         while (!s2.isEmpty()){
             print(s2.pop());
         }
