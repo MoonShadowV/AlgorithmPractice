@@ -30,4 +30,29 @@ public class MinCoin {
 
         return dp[n-1][aim] != max ? dp[n-1][aim] : -1;
     }
+
+    int findMin2(int[] arr,int aim){
+        int n = arr.length;
+        int max = Integer.MAX_VALUE;
+        int[][] dp = new int[n][aim+1];
+
+        for (int j = 1;j <= aim;j++){
+            dp[0][j] = max;
+        }
+        if (arr[0] <= aim){
+            dp[0][arr[0]] = 1;
+        }
+
+        int tmp = 0;
+        for (int i = 1;i < n;i++){
+            for (int j = 1;j <= aim;j++){
+                tmp = max;
+                if (j - arr[i] >= 0 && dp[i-1][j - arr[i]] != max){
+                    tmp = dp[i-1][j - arr[i]] + 1;
+                }
+                dp[i][j] = Math.min(dp[i-1][j],tmp);
+            }
+        }
+        return dp[n-1][aim] != max ? dp[n-1][aim] : -1;
+    }
 }
