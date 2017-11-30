@@ -51,6 +51,7 @@ public class StackToQueue {
     }
 
 
+
     public static void main(String[] args){
         StackToQueue MyQueue = new StackToQueue();
         MyQueue.add(5);

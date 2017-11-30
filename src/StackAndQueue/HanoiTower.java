@@ -30,7 +30,7 @@ public class HanoiTower {
         //避免出栈时空栈
         ls.push(Integer.MAX_VALUE);
         ms.push(Integer.MAX_VALUE);
-        rs.push(Integer.MAX_VALUE);
+
 
         for (int i = num;i>0;i--){
             ls.push(i);
